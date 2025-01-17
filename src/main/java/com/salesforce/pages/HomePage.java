@@ -22,6 +22,21 @@ public class HomePage  extends ProjectSpecificMethods{
 		reportStep("All menu is clicked", "pass");
 		return this;
 	}
+	
+	public HomePage clickServiceCatalog() {
+
+		shadowXpath("//span[text()='Service Catalog']");
+		reportStep("ServiceCatalog is clicked", "pass");
+		return this;
+	}
+	
+	public HomePage clickingMobile() {
+
+		shadowframe("//iframe[@id='gsft_main']");
+		clickUsingJs(locateElement(Locators.XPATH, "//h2[contains(text(),'Mobiles')]"));
+		reportStep("mobile is clicked", "pass");
+		return this;
+	}
 	public HomePage clickOnAppLauncher() {
 
 		click(locateElement(Locators.XPATH, "//button[@title='App Launcher']/div"));

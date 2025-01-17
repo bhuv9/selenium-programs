@@ -53,7 +53,18 @@ public class SeleniumBase extends Reporter implements Browser, Element  {
 		shad.findElementByXPath(xpath).click();
 		}
 		catch (Exception e) {
-			reportStep("Not able to mouse hover" + e.getMessage(), "fail", true);
+			reportStep("Not able to locate shadowXpath " + e.getMessage(), "fail", true);
+		}
+	}
+	protected void shadowframe(String xpath) {
+		try {
+		shad = new Shadow(getDriver());
+		shad.setImplicitWait(10);
+		WebElement elementByXPath = shad.findElementByXPath(xpath);
+		getDriver().switchTo().frame(elementByXPath);
+		}
+		catch (Exception e) {
+			reportStep("Not able to locate shadow Frame" + e.getMessage(), "fail", true);
 		}
 	}
 	
