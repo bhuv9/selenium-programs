@@ -4,7 +4,6 @@
   <test thread-count="5" name="Chrome">
      <classes>
       <class name="com.salesforce.testcases.LoginPage_TC_001"/>
-            <class name="com.salesforce.testcases.SFEditPage_TC_002"/>
 
     </classes>
   </test> <!-- Test -->

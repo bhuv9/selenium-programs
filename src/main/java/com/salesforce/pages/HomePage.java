@@ -13,6 +13,15 @@ public class HomePage  extends ProjectSpecificMethods{
 		return this;
 
 	}
+	
+	
+	
+	public HomePage clickAll() {
+
+		shadowXpath("//div[text()='All']");
+		reportStep("All menu is clicked", "pass");
+		return this;
+	}
 	public HomePage clickOnAppLauncher() {
 
 		click(locateElement(Locators.XPATH, "//button[@title='App Launcher']/div"));

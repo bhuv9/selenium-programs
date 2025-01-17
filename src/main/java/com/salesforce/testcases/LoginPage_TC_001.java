@@ -25,7 +25,7 @@ public class LoginPage_TC_001  extends ProjectSpecificMethods{
 		LoginPage lp=new LoginPage();
 		lp.enterUserName(uName)
 		.enterPassword(passWord)
-		.clickOnLogin().clickOnAppLauncher().clickOnViewAll().clickOnSalesIcon().clickAccountsTab().clickNewIcon().EnterAccountName(aName).clickOwnershipDropDown().clickValuesFromOwnershipDropDown().clickSaveButtonInAccountForm().verifyAccountCreated(aName);
+		.clickOnLogin().clickAll();
 	}
 
 }

@@ -34,13 +34,29 @@ import com.framework.selenium.api.design.Element;
 import com.framework.selenium.api.design.Locators;
 import com.framework.utils.Reporter;
 
+import io.github.sukgu.Shadow;
+
 
 
 public class SeleniumBase extends Reporter implements Browser, Element  {
 	protected Actions act;
+	protected Shadow shad;
 
 	public static String projectId;
 	public static String auctionRef;
+	
+	
+	protected void shadowXpath(String xpath) {
+		try {
+		shad = new Shadow(getDriver());
+		shad.setImplicitWait(10);
+		shad.findElementByXPath(xpath).click();
+		}
+		catch (Exception e) {
+			reportStep("Not able to mouse hover" + e.getMessage(), "fail", true);
+		}
+	}
+	
 	
 	protected String getAttribute(WebElement ele, String attributeValue) {
 		String val = "";
