@@ -10,7 +10,7 @@ public class LoginPage extends ProjectSpecificMethods {
 	public LoginPage enterUserName(String uName) {
 		
 		//locate the element
-		WebElement locateElement = locateElement("user_name");
+		WebElement locateElement = locateElement("username");
 		//type userName
 		//type(locateElement, uName);
 		clearAndType(locateElement, uName);
@@ -21,7 +21,7 @@ public class LoginPage extends ProjectSpecificMethods {
 	
 	public LoginPage enterPassword(String pass) {
 		
-		type(locateElement("user_password"), pass);
+		type(locateElement("password"), pass);
 		reportStep("Enter the PassWord as :"+pass, "pass");
 		return this;
 	}
@@ -29,7 +29,7 @@ public class LoginPage extends ProjectSpecificMethods {
 	
 
 	public HomePage clickOnLogin() {
-		click(locateElement("sysverb_login"));
+		click(locateElement("Login"));
 		reportStep("Login is Clicked", "pass");
 		return new HomePage();
 	}
