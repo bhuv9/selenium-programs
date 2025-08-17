@@ -41,7 +41,6 @@ public class HomePage  extends ProjectSpecificMethods{
 
 		click(locateElement(Locators.XPATH, "//button[@title='App Launcher']/div"));
 		reportStep("Title page is verified", "pass");
-
 		return this;
 	}
 	public HomePage clickOnViewAll() {
@@ -59,6 +58,15 @@ public class HomePage  extends ProjectSpecificMethods{
 		reportStep("Title page is verified", "pass");
 
 		return new AccountPage();
+
+	}
+	
+	public LeadsPage clickOnSales() {
+
+		click(locateElement(Locators.XPATH, "//p[text()='Sales']/ancestor::a"));
+		reportStep("Title page is verified", "pass");
+
+		return new LeadsPage();
 
 	}
 	

@@ -34,6 +34,7 @@ public class DriverInstance  extends AbstractTestNGCucumberTests{
 			options.addArguments("--start-maximized"); 
 			options.addArguments("--disable-notifications"); 
 			options.addArguments("--incognito");
+			options.addArguments("guest");
 			remoteWebdriver.set(new ChromeDriver(options));
 			break;
 		case "firefox":

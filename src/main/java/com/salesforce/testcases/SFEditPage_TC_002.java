@@ -11,7 +11,7 @@ public class SFEditPage_TC_002  extends ProjectSpecificMethods{
 	
 	@BeforeTest
 	public void setValues() {
-		excelFileName="Login";
+		excelFileName="EditAccount";
 		testcaseName="Salesforce Application";
 		testDescription="Login page";
 		authors="Bhuvanesh";
@@ -25,7 +25,20 @@ public class SFEditPage_TC_002  extends ProjectSpecificMethods{
 		LoginPage lp=new LoginPage();
 		lp.enterUserName(uName)
 		.enterPassword(passWord)
-		.clickOnLogin().clickOnAppLauncher().clickOnViewAll().clickOnSalesIcon().clickAccountsTab().clickNewIcon().EnterAccountName(aName).clickOwnershipDropDown().clickValuesFromOwnershipDropDown().clickSaveButtonInAccountForm().verifyAccountCreated(aName);
+		.clickOnLogin()
+		.clickOnAppLauncher()
+		.clickOnViewAll()
+		.clickOnSalesIcon()
+		.clickAccountsTab()
+		.clickNewIcon()
+		.EnterAccountName(aName)
+		.clickOwnershipDropDown()
+		.clickValuesFromOwnershipDropDown()
+		.clickSaveButtonInAccountForm()
+		.verifyAccountCreated(aName)
+		.clickAccountsTab()
+		.EnterAccountNameInSearchField(aName);
+		
 	}
 
 }
