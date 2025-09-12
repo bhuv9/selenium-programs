@@ -10,7 +10,6 @@ import org.testng.annotations.DataProvider;
 
 import com.framework.selenium.api.base.SeleniumBase;
 import com.framework.utils.DataLibrary;
-
 public class ProjectSpecificMethods extends SeleniumBase {
 	public static Properties prop;
 	@DataProvider(name = "fetchData", indices = 0)
