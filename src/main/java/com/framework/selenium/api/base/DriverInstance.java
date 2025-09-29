@@ -15,7 +15,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 
 public class DriverInstance  extends AbstractTestNGCucumberTests{
-
+   // Interitence,encapsulation ---> // Singleton desing pattern
 	private static final ThreadLocal<RemoteWebDriver> remoteWebdriver = new ThreadLocal<RemoteWebDriver>();
 	private static final ThreadLocal<WebDriverWait> wait = new  ThreadLocal<WebDriverWait>();
 

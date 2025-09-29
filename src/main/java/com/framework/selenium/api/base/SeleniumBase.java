@@ -39,6 +39,8 @@ import io.github.sukgu.Shadow;
 
 
 public class SeleniumBase extends Reporter implements Browser, Element  {
+	// multiple inheritance --> one child class can inherit the property from more than one parent
+	// Polymorphism-- > both method overloading and overriding
 	protected Actions act;
 	protected Shadow shad;
 
