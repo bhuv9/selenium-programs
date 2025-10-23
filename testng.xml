@@ -7,6 +7,7 @@
   <test thread-count="5" name="Chrome">
      <classes>
       <class name="com.salesforce.testcases.TC001_CreateLead"/>
+      <class name="com.salesforce.testcases.TC002_CreateAccount"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

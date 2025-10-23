@@ -6,24 +6,24 @@ import org.testng.annotations.Test;
 import com.framework.testng.api.base.ProjectSpecificMethods;
 import com.salesforce.pages.LoginPage;
 
-public class SFEditPage_TC_002  extends ProjectSpecificMethods{
+public class TC002_CreateAccount  extends ProjectSpecificMethods{
 	
 	
 	@BeforeTest
 	public void setValues() {
-		excelFileName="EditAccount";
-		testcaseName="Salesforce Application";
-		testDescription="Login page";
+		excelFileName="CreateAccount";
+		testcaseName="CreateAccount";
+		testDescription="Creating a new Account in the salesforce application";
 		authors="Bhuvanesh";
-		category="Sanity";
+		category="Regression";
 	}
 	
 	
 	@Test(dataProvider = "fetchData")
-	public void login(String uName,String passWord,String aName) {
+	public void login(String userName,String passWord,String accountName) {
 		
 		LoginPage lp=new LoginPage();
-		lp.enterUserName(uName)
+		lp.enterUserName(userName)
 		.enterPassword(passWord)
 		.clickOnLogin()
 		.clickOnAppLauncher()
@@ -31,13 +31,13 @@ public class SFEditPage_TC_002  extends ProjectSpecificMethods{
 		.clickOnSalesIcon()
 		.clickAccountsTab()
 		.clickNewIcon()
-		.EnterAccountName(aName)
+		.EnterAccountName(accountName)
 		.clickOwnershipDropDown()
 		.clickValuesFromOwnershipDropDown()
 		.clickSaveButtonInAccountForm()
-		.verifyAccountCreated(aName)
+		.verifyAccountCreated(accountName)
 		.clickAccountsTab()
-		.EnterAccountNameInSearchField(aName);
+		.EnterAccountNameInSearchField(accountName);
 		
 	}
 

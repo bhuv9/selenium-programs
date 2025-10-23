@@ -1,7 +1,6 @@
 package com.salesforce.testcases;
 
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.framework.testng.api.base.ProjectSpecificMethods;
@@ -13,18 +12,18 @@ public class TC001_CreateLead  extends ProjectSpecificMethods{
 	@BeforeTest
 	public void setValues() {
 		excelFileName="CreateLead";
-		testcaseName="Salesforce Application";
-		testDescription="Login page";
+		testcaseName="Create Lead ";
+		testDescription="Creating a new Lead in the salesforce application";
 		authors="Bhuvanesh";
 		category="Sanity";
 	}
 	
 	
 	@Test(dataProvider = "fetchData")
-	public void createLead(String uName,String passWord,String firstName,String lastName,String cName) {
+	public void createLead(String userName,String passWord,String firstName,String lastName,String companyName) {
 		
 		LoginPage lp=new LoginPage();
-		lp.enterUserName(uName)
+		lp.enterUserName(userName)
 		.enterPassword(passWord)
 		.clickOnLogin()
 		.clickOnAppLauncher()
@@ -35,7 +34,7 @@ public class TC001_CreateLead  extends ProjectSpecificMethods{
 		.selectsalutationDropdown()
 		.enterFirstName(firstName)
 		.enterLastName(lastName)
-		.enterCompanyName(cName)
+		.enterCompanyName(companyName)
 		.clickSaveLead();
 		
 
