@@ -20,17 +20,13 @@ public class LoginPage_TC_001  extends ProjectSpecificMethods{
 	
 	
 	@Test(dataProvider = "fetchData")
-	public void login(String uName,String passWord) {
-		
-		LoginPage lp=new LoginPage();
-		lp.enterUserName(uName)
-		.enterPassword(passWord)
-		.clickOnLogin()
-		.clickOnAppLauncher()
-		.clickOnViewAll();
-		
-		
-
+	public void runLoginTC(String uName,String passWord) {
+		LoginPage user =new LoginPage();
+		user.enterUserName(uName)
+		    .enterPassword(passWord)
+		    .clickOnLogin()
+		    .clickOnAppLauncher()
+		    .clickOnViewAll();
 	}
 
 }

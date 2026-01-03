@@ -13,7 +13,7 @@ public interface Browser {
 	
 	/**
 	 * This method will launch the Chrome browser and 
-	 * maximise the browser and set the wait for 30 seconds 
+	 * maximize the browser and set the wait for 30 seconds 
 	 * and load the url
 	 * @param url - This will load the specified url  `
 	 * @author Sarath - TestLeaf
@@ -23,7 +23,7 @@ public interface Browser {
 	
 	/**
 	 * This method will launch the Any browser and 
-	 * maximise the browser and set the wait for 30 seconds 
+	 * maximize the browser and set the wait for 30 seconds 
 	 * and load the url
 	 * @param browser - This will load the specified browser
 	 * @param url - This will load the specified url  

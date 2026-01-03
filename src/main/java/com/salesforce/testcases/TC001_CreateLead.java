@@ -20,22 +20,22 @@ public class TC001_CreateLead  extends ProjectSpecificMethods{
 	
 	
 	@Test(dataProvider = "fetchData")
-	public void createLead(String userName,String passWord,String firstName,String lastName,String companyName) {
+	public void runCreateLead(String userName,String passWord,String firstName,String lastName,String companyName) {
 		
-		LoginPage lp=new LoginPage();
-		lp.enterUserName(userName)
-		.enterPassword(passWord)
-		.clickOnLogin()
-		.clickOnAppLauncher()
-		.clickOnViewAll()
-		.clickOnSales()
-		.clickLeadsTab()
-		.clickNewLeadsButton()
-		.selectsalutationDropdown()
-		.enterFirstName(firstName)
-		.enterLastName(lastName)
-		.enterCompanyName(companyName)
-		.clickSaveLead();
+		LoginPage user=new LoginPage();
+		user.enterUserName(userName)
+		    .enterPassword(passWord)
+		    .clickOnLogin()
+		    .clickOnAppLauncher()
+		    .clickOnViewAll()
+		    .clickOnSales()
+		    .clickLeadsTab()
+		    .clickNewLeadsButton()
+		    .selectsalutationDropdown()
+		    .enterFirstName(firstName)
+		    .enterLastName(lastName)
+		    .enterCompanyName(companyName)
+		    .clickSaveLead();
 		
 
 	}

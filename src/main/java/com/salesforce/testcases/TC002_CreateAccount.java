@@ -20,7 +20,7 @@ public class TC002_CreateAccount  extends ProjectSpecificMethods{
 	
 	
 	@Test(dataProvider = "fetchData")
-	public void login(String userName,String passWord,String accountName) {
+	public void runCreateAccount(String userName,String passWord,String accountName) {
 		
 		LoginPage lp=new LoginPage();
 		lp.enterUserName(userName)
@@ -28,7 +28,7 @@ public class TC002_CreateAccount  extends ProjectSpecificMethods{
 		.clickOnLogin()
 		.clickOnAppLauncher()
 		.clickOnViewAll()
-		.clickOnSalesIcon()
+		.clickOnSales()
 		.clickAccountsTab()
 		.clickNewIcon()
 		.EnterAccountName(accountName)
@@ -36,7 +36,7 @@ public class TC002_CreateAccount  extends ProjectSpecificMethods{
 		.clickValuesFromOwnershipDropDown()
 		.clickSaveButtonInAccountForm()
 		.verifyAccountCreated(accountName)
-		.clickAccountsTab()
+		.clickAccountsTabNew()
 		.EnterAccountNameInSearchField(accountName);
 		
 	}

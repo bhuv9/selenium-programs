@@ -6,18 +6,12 @@ import com.framework.testng.api.base.ProjectSpecificMethods;
 public class HomePage  extends ProjectSpecificMethods{
 	
 	public HomePage verifyTitlePage(String title) {
-		// TODO Auto-generated method stub
 		title="Home|Salesforce";
 		verifyTitle(title);
-
 		return this;
-
 	}
 	
-	
-	
 	public HomePage clickAll() {
-
 		shadowXpath("//div[text()='All']");
 		reportStep("All menu is clicked", "pass");
 		return this;
@@ -39,38 +33,43 @@ public class HomePage  extends ProjectSpecificMethods{
 	}
 	public HomePage clickOnAppLauncher() {
 
-		click(locateElement(Locators.XPATH, "//button[@title='App Launcher']/div"));
-		reportStep("Title page is verified", "pass");
+		clickUsingJs(locateElement(Locators.XPATH, "//button[@title='App Launcher']/div"));
+		reportStep("App Launcher button is clicked", "pass");
 		return this;
 	}
 	public HomePage clickOnViewAll() {
 
 		click(locateElement(Locators.XPATH, "//button[text()='View All']"));
-		reportStep("Title page is verified", "pass");
-
+		reportStep("View All button is clicked", "pass");
 		return this;
 		
 	}
 	
-	public AccountPage clickOnSalesIcon() {
 
-		click(locateElement(Locators.XPATH, "//p[text()='Sales']/ancestor::a"));
-		reportStep("Title page is verified", "pass");
+	
+	public HomePage clickOnSales() {
 
+		pause(3000);
+		clearAndType(locateElement(Locators.XPATH, "//input[@placeholder='Search apps or items...']"),"sales");
+		click(locateElement(Locators.XPATH, "(//p[@class='slds-truncate']/mark[text()='Sales'])[3]"));
+		reportStep("Sales is clicked sucessfully", "pass");
+		return this;
+		
+
+	}
+	
+	public LeadsPage clickLeadsTab() {
+		clickUsingJs(locateElement(Locators.XPATH, "//a[@title='Leads']"));
+		reportStep("Lead tab is clicked successfully", "pass");
+		return new LeadsPage();
+	}
+	
+	public AccountPage clickAccountsTab() {
+		clickUsingJs(locateElement(Locators.XPATH, "//a[@title='Accounts']"));
+		reportStep("Accounts tab is clicked successfully", "pass");
 		return new AccountPage();
 
 	}
-	
-	public LeadsPage clickOnSales() {
-
-		click(locateElement(Locators.XPATH, "//p[text()='Sales']/ancestor::a"));
-		reportStep("Title page is verified", "pass");
-
-		return new LeadsPage();
-
-	}
-	
-	
 	
 
 }
